@@ -274,11 +274,13 @@ const searchDog = (req, res) => {
       return res.json({ error: 'No dogs found' });
     }
 
+    let dog = new Dog(defaultData);
+    dog = doc;
     // if a match, increase age and send the match back
-    doc.age++;
-    const savePromise = doc.save();
+    dog.age++;
+    const savePromise = dog.save();
     // send back the name as a success for now
-    savePromise.then(() => res.json({ name: doc.name, breed: doc.breed, age: doc.age }));
+    savePromise.then(() => res.json({ name: dog.name, breed: dog.breed, age: dog.age }));
 
     return null
   });
