@@ -9,6 +9,8 @@
   "main": "./server/app.js",
   "scripts": {
     "nodemon": "nodemon --watch ./server ./server/app.js",
+    "build": "babel ./views --out-file ./client/bundle.js",
+    "watch": "babel --watch ./views --out-file ./client/bundle.js",
     "start": "node ./server/app.js",
     "pretest": "eslint ./server --fix",
     "test": "echo \"tests complete\""
