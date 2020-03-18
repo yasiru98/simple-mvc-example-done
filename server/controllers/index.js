@@ -280,10 +280,7 @@ const searchDog = (req, res) => {
     // send back the name as a success for now
     savePromise.then(() => res.json({ name: doc.name, breed: doc.breed, age: doc.age }));
 
-    // if save error, just return an error for now
-    savePromise.catch((err) => res.status(500).json({ err }));
-    
-    return
+    return null
   });
 };
 
