@@ -283,6 +283,7 @@ const searchDog = (req, res) => {
     // if save error, just return an error for now
     savePromise.catch((err) => res.status(500).json({ err }));
     
+    return
   });
 };
 
